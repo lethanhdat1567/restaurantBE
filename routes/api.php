@@ -26,10 +26,9 @@ use PhpParser\Node\Expr\FuncCall;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::middleware('auth:sanctum')->group(function() {
-    Route::get('logout',[AuthController::class,'logout']);
-    Route::get('user',[AuthController::class,'getUser']);
+Route::middleware(['auth:sanctum', 'EnsureFrontendRequestsAreStateful'])->group(function() {
+    Route::get('logout', [AuthController::class, 'logout']);
+    Route::get('user', [AuthController::class, 'getUser']);
 });
 
 // Authorization
