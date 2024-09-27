@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return response()->json(['hello' => 'Lam on lum duoc data di']);
+    return view('welcome');
 });
 
 
